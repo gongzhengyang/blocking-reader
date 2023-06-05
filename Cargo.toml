@@ -1,0 +1,23 @@
+[package]
+name = "blocking-reader"
+version = "0.1.0"
+edition = "2021"
+categories = ["asynchronous"]
+description = "read a file async, will log last read seek and skip to last read when in a loop"
+keywords = ["io", "file"]
+authors = ["Gongzhengyang <gongzhengyangfindyourdream@gmail.com>"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+moka = { version = "0.11", features = ["future"] }
+async-trait = "0.1"
+anyhow = "1"
+
+[[example]]
+name = "file-read"
+path = "examples/file-read/src/main.rs"
